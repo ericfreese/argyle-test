@@ -1,0 +1,21 @@
+%checkable {
+  @include ar-checkable($line-height: 40px, $font-size: 20px);
+  cursor: pointer;
+}
+
+%checkable-label {
+  @include ar-checkable__label;
+  vertical-align: middle;
+}
+
+.checkbox {
+  @extend %checkable;
+
+  > span:last-child {
+    @extend %checkable-label;
+  }
+}
+
+.radio {
+  @extend %checkable;
+}

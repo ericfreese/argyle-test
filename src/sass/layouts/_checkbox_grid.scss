@@ -1,0 +1,19 @@
+@include ar-with-context((
+  "breakpoints": $breakpoints,
+  "grid":        $grid )) {
+
+  .l-checkbox-grid {
+    @extend %grid-row;
+  }
+
+  .l-checkbox-grid__item {
+    @include ar-grid-cols(12);
+    @include ar-grid-cols(6, small);
+    @include ar-grid-cols(3, medium);
+
+    .checkbox {
+      border: 1px solid #ccc;
+      padding: 20px;
+    }
+  }
+}

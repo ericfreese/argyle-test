@@ -1,0 +1,105 @@
+%fading-checker {
+  @include ar-styled-checkbox;
+  vertical-align: middle;
+  width: 10px;
+  height: 10px;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 100%;
+}
+
+%fading-checker__checkmark {
+  @include ar-styled-checkbox__checkmark;
+  @include ar-fill-closest-positioned-ancestor;
+  border-radius: 100%;
+
+  @include ar-styled-checkbox__checkmark--pseudo(focus) {
+    box-shadow: 0 0 6px black;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    margin-left: -5px;
+    margin-top: -5px;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 0.4s;
+
+    @include ar-styled-checkbox__checkmark--checked {
+      opacity: 1;
+    }
+  }
+}
+
+%fading-checker--spinning__checkmark {
+  @extend %fading-checker__checkmark;
+
+  &:before {
+    transition: all 0.8s;
+
+    $start-size: 80px;
+    width: $start-size;
+    height: $start-size;
+    margin-left: -$start-size / 2;
+    margin-top: -$start-size / 2;
+    transform: rotate(360deg);
+    border-radius: 0;
+
+    @include ar-styled-checkbox__checkmark--checked {
+      width: 10px;
+      height: 10px;
+      margin-left: -5px;
+      margin-top: -5px;
+      transform: rotate(0);
+      border-radius: 10px;
+    }
+  }
+}
+
+.fading-checker {
+  @extend %fading-checker;
+
+  .fading-checker__checkmark {
+    @extend %fading-checker__checkmark;
+  }
+}
+
+.fading-checker--large {
+  width: 18px;
+  height: 18px;
+  border-width: 2px;
+  vertical-align: middle;
+
+  .fading-checker__checkmark:before {
+    font-size: 36px;
+  }
+}
+
+.fading-checker--black {
+  border-color: black;
+
+  .fading-checker__checkmark:before {
+    background: lighten(black, 50%);
+    color: white;
+    text-shadow: 0 0 1px black;
+  }
+}
+
+.fading-checker--green {
+  border-color: #060;
+
+  .fading-checker__checkmark:before {
+    background: lighten(#060, 20%);
+  }
+}
+
+.fading-checker--spinning {
+  .fading-checker__checkmark:before {
+    @extend %fading-checker--spinning__checkmark;
+  }
+}

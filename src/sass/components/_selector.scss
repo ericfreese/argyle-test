@@ -1,0 +1,15 @@
+$selector-dropdown-width: 20px;
+
+.selector {
+  @include ar-styled-select($display: block);
+  @include ar-styled-select--size($height: 40px, $line-height: 20px, $border-height: 4px);
+  border: 2px solid #ccc;
+
+  padding-left: 10px;
+
+  @include ar-styled-select__dropdown--pseudo;
+
+  select {
+    @include ar-styled-select__select;
+  }
+}

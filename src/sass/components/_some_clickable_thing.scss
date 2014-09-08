@@ -1,0 +1,22 @@
+%nested-links {
+  @include ar-nested-links__container;
+
+  a {
+    @include ar-nested-links__inner;
+
+    &.main {
+      @include ar-nested-links__outer(after);
+    }
+  }
+}
+
+.some-clickable-thing {
+  @extend %nested-links;
+  padding: 30px;
+  border: 1px solid #ccc;
+  text-align: center;
+
+  &:hover {
+    background: lightblue;
+  }
+}

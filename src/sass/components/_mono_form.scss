@@ -1,0 +1,24 @@
+.mono-form {
+  @include ar-row-expando;
+  border: 1px solid #ccc;
+  padding: 40px;
+
+  .mono-form__input {
+    @include ar-row-expando__cell;
+    @include ar-row-expando__expander;
+
+    input[type="text"] {
+      width: 100%;
+      height: 40px;
+      line-height: 30px;
+      font-size: 20px;
+      box-sizing: border-box;
+      border: 2px solid #ccc;
+      border-right: none;
+    }
+  }
+
+  .mono-form__button {
+    @include ar-row-expando__cell;
+  }
+}

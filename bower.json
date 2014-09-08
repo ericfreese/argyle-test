@@ -1,0 +1,13 @@
+{
+  "name": "argyle-test",
+  "version": "0.0.0",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "devDependencies": {
+    "argyle": "git://github.com/ericfreese/argyle.git#master"
+  }
+}

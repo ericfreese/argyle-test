@@ -1,0 +1,19 @@
+%inline-list {
+  @include ar-inline-list;
+}
+
+.link-bar {
+  @extend %inline-list;
+
+  li {
+    @include ar-inline-separator($separator: ' / ');
+  }
+}
+
+.link-bar-before {
+  @extend %inline-list;
+
+  li {
+    @include ar-inline-separator($separator: ' / ', $pseudo: before);
+  }
+}

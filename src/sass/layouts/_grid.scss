@@ -1,0 +1,13 @@
+@include ar-with-context(( "breakpoints": $breakpoints )) {
+  @include ar-with-context(( "containers": $containers )) {
+    %container { @include ar-container-from-context; }
+  }
+
+  @include ar-with-context(( "grid": $grid )) {
+    %grid-row { @include ar-grid-row; }
+  }
+}
+
+.container {
+  @extend %container;
+}

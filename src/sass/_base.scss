@@ -1,0 +1,16 @@
+html, body {
+  margin: 0;
+  body: 0;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

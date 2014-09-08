@@ -1,0 +1,19 @@
+$breakpoints: (
+  "small":  480px,
+  "medium": 768px,
+  "large":  992px,
+  "xlarge": 1200px
+);
+
+$containers: (
+  "default": ( "margin": 20px ),
+  "small":   ( "width":  460px ),
+  "medium":  ( "width":  750px ),
+  "large":   ( "width":  970px ),
+  "xlarge":  ( "width":  1170px )
+);
+
+$grid: (
+  "columns":          12,
+  "gutter-width":     30px
+);

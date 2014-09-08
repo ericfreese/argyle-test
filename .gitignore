@@ -1,0 +1,6 @@
+*.sublime-project
+*.sublime-workspace
+.sass-cache
+dist
+node_modules
+src/bower
